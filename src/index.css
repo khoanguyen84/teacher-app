@@ -17,11 +17,17 @@ body {
   border-radius: 50%;
 }
 
+.loading-sm{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
 .search{
   border: none;
   outline: none;
   border-radius: 60px;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: rgb(160, 157, 157);
 }
 

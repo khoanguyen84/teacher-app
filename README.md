@@ -15,6 +15,7 @@
 + React-Router-DOM: npm i react-router-dom
 + Font-family: Baloo Tamma 2
 + Axios: npm i axios
++ Toastify: npm i react-toastify
 
 ## Template
 + Pinterest: https://www.pinterest.com/pin/170292429651733879/

@@ -6,7 +6,7 @@ function Header() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-success">
             <div className="container">
-                <Link className="navbar-brand d-flex align-items-center text-warning" to={"/"}>
+                <Link className="navbar-brand d-flex align-items-center text-warning" to={"/teacher"}>
                     <img className="rounded-circle logo-sm" src={logo} alt="" />
                     Teacher App
                 </Link>
