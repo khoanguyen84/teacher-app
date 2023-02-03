@@ -82,7 +82,7 @@ function TeacherList() {
                                                         <div className="col-md-7 d-flex flex-column align-items-start">
                                                             <h5 className="fw-bolder">{teacher.name}</h5>
                                                             <p className="text-muted">{getDepartmentById(teacher.departmentId).name}</p>
-                                                            <Link to={""} className="stretched-link">View Profile</Link>
+                                                            <Link to={`/teacher/view/${teacher.id}`} className="stretched-link">View Profile</Link>
                                                         </div>
                                                     </div>
                                                 </div>

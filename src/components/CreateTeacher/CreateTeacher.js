@@ -5,10 +5,12 @@ import Spinner from "../layout/Spinner";
 import DepartmentService from './../../services/departmentService';
 import TeacherService from './../../services/teacherService';
 import { toast } from 'react-toastify';
+import FileService from './../../services/fileService';
 
 function CreateTeacher() {
     const [state, setState] = useState({
         loading: false,
+        uploading: false,
         departments: [],
         teacher: {
             name: "",
@@ -18,6 +20,8 @@ function CreateTeacher() {
             departmentId: 0
         }
     })
+
+    const [selectFile, setSelectFile] = useState({});
 
     useEffect(() => {
         try {
@@ -39,9 +43,8 @@ function CreateTeacher() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            teacher.avatar = "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1111.jpg";
             let teacherRes = await TeacherService.createTeacher(teacher);
-            if(teacherRes.data){
+            if (teacherRes.data) {
                 toast.success("Teacher created success!");
                 setState({
                     ...state,
@@ -68,8 +71,42 @@ function CreateTeacher() {
             }
         })
     }
-    const { loading, departments, teacher } = state;
-    const { name, email, mobile, departmentId } = teacher;
+
+    const handleSelectAvatar = (e) => {
+        let fakeAvatarUrl = URL.createObjectURL(e.target.files[0])
+        setState({
+            ...state,
+            teacher: {
+                ...teacher,
+                avatar: fakeAvatarUrl
+            }
+        })
+        setSelectFile(e.target.files[0]);
+    }
+
+    const handleUploadAvatar = async () => {
+        try {
+            setState({...state, uploading: true})
+            let uploadRes = await FileService.uploadImage(selectFile);
+            if (uploadRes.data.url) {
+                setState({
+                    ...state,
+                    teacher: {
+                        ...teacher,
+                        avatar: uploadRes.data.url
+                    },
+                    uploading: false
+                })
+                toast.info("Avatar has been uploaded!")
+            }
+        } catch (error) {
+            toast.error("Upload failed, please try again later!")
+            setState({...state, uploading: false})
+        }
+    }
+    const { loading, uploading, departments, teacher } = state;
+    const { name, email, mobile, departmentId, avatar } = teacher;
+    console.log(teacher);
     return (
         <>
             <section className="create-teacher-info mt-2">
@@ -134,7 +171,7 @@ function CreateTeacher() {
                                                     <option value={0} disabled>Select a department</option>
                                                     {
                                                         departments.map((depart) => (
-                                                            <option value={depart.id}>{depart.name}</option>
+                                                            <option key={depart.id} value={depart.id}>{depart.name}</option>
                                                         ))
                                                     }
                                                 </select>
@@ -158,10 +195,26 @@ function CreateTeacher() {
                                 </div>
                                 <div className="col-md-3">
                                     <div className="card">
-                                        <img src={noAvatar} className="card-img-top" alt="..." />
+                                        <img role={"button"} src={avatar || noAvatar} className="card-img-top" alt="..."
+                                            onClick={() => document.querySelector('#fileAvatar').click()}
+                                        />
                                         <div className="card-body d-flex align-items-center justify-content-center">
-                                            <button className="btn btn-secondary btn-sm">Uploading</button>
+                                            {
+                                                uploading ? (
+                                                    <button className="btn btn-secondary btn-sm" type="button" disabled>
+                                                        <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true" />
+                                                        Uploading...
+                                                    </button>
+                                                ) : (
+                                                    <button className="btn btn-secondary btn-sm"
+                                                        onClick={handleUploadAvatar}
+                                                    >Upload</button>
+                                                )
+                                            }
                                         </div>
+                                        <input id="fileAvatar" type="file" className="d-none" accept="image/*"
+                                            onChange={handleSelectAvatar}
+                                        />
                                     </div>
                                 </div>
                                 <div className="col-md-5"></div>
