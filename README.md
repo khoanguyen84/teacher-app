@@ -17,5 +17,15 @@
 + Axios: npm i axios
 + Toastify: npm i react-toastify
 
+## Deploy React to Github Page
++ gh-page: npm install gh-pages --save-dev
++ Update package.json: "homepage": "https://khoanguyen84.github.io/teacher-app"
++ Update package.json: scripts: {
+    "predeploy": "npm run build",
+    "deploy" : "gh-pages -d build",
+    ...
+}
++ Để deploy: npm run deploy
+
 ## Template
 + Pinterest: https://www.pinterest.com/pin/170292429651733879/

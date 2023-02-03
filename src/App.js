@@ -14,10 +14,10 @@ function App() {
       <ToastContainer autoClose={2000} />
       <Header />
       <Routes>
-        <Route path='/' element={<TeacherList />} />
-        <Route path='/teacher' element={<TeacherList />} />
-        <Route path='/teacher/create' element={<CreateTeacher />} />
-        <Route path='/teacher/view/:teacherId' element={<ViewTeacher />} />
+        <Route path='/teacher-app' element={<TeacherList />} />
+        <Route path='/teacher-app/teacher' element={<TeacherList />} />
+        <Route path='/teacher-app/teacher/create' element={<CreateTeacher />} />
+        <Route path='/teacher-app/teacher/view/:teacherId' element={<ViewTeacher />} />
       </Routes>
       <Footer />
     </>

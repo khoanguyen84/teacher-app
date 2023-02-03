@@ -58,7 +58,7 @@ function TeacherList() {
                     <input type="search" className="w-25 search" placeholder="Search here ..."
                         onInput={handleSearch}
                     />
-                    <Link to={"/teacher/create"} className="btn btn-primary create-teacher-btn">
+                    <Link to={"/teacher-app/teacher/create"} className="btn btn-primary create-teacher-btn">
                         <i className="fa-solid fa-user-plus me-3"></i>
                         New Teacher
                     </Link>
@@ -82,7 +82,7 @@ function TeacherList() {
                                                         <div className="col-md-7 d-flex flex-column align-items-start">
                                                             <h5 className="fw-bolder">{teacher.name}</h5>
                                                             <p className="text-muted">{getDepartmentById(teacher.departmentId).name}</p>
-                                                            <Link to={`/teacher/view/${teacher.id}`} className="stretched-link">View Profile</Link>
+                                                            <Link to={`/teacher-app/teacher/view/${teacher.id}`} className="stretched-link">View Profile</Link>
                                                         </div>
                                                     </div>
                                                 </div>

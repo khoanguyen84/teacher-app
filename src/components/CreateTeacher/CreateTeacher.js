@@ -185,7 +185,7 @@ function CreateTeacher() {
                                                     <i className="fa fa-user-plus me-1"></i>
                                                     Create
                                                 </button>
-                                                <Link to={"/teacher"} className="btn btn-dark btn-sm">
+                                                <Link to={"/teacher-app/teacher"} className="btn btn-dark btn-sm">
                                                     <i className="fa-solid fa-angles-left me-1 text-white"></i>
                                                     Back
                                                 </Link>

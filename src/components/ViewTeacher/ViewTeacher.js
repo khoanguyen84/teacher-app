@@ -45,7 +45,7 @@ function ViewTeacher() {
                 <div className="container">
                     <div className="d-flex align-items-center">
                         <h4 className="fw-bolder text-primary me-2">{name ? `${name}'s Profile` : ""} </h4>
-                        <Link to={"/teacher"} className="btn btn-outline-secondary btn-sm">
+                        <Link to={"/teacher-app/teacher"} className="btn btn-outline-secondary btn-sm">
                             <i className="fa-solid fa-angles-left me-1 text-muted"></i>
                             Back
                         </Link>
