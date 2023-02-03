@@ -1,7 +1,7 @@
 # Build Teacher App using React
 
 + Link git [Github Teacher App](https://github.com/khoanguyen84/teacher-app).
-+ Link sản phẩm [Teacher App](https://github.com/facebook/create-react-app).
++ Link sản phẩm [Teacher App](https://khoanguyen84.github.io/teacher-app).
 
 ## Kiến thức sử dụng
 + Bootstrap 5
