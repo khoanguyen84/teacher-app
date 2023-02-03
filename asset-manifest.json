@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/teacher-app/static/css/main.69da96ca.css",
+    "main.js": "/teacher-app/static/js/main.28c3f5c1.js",
+    "static/media/fa-solid-900.ttf": "/teacher-app/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
+    "static/media/loading.gif": "/teacher-app/static/media/loading.40d348f8d30caf16cfe9.gif",
+    "static/media/fa-brands-400.ttf": "/teacher-app/static/media/fa-brands-400.450a5c898f0b184b968b.ttf",
+    "static/media/fa-solid-900.woff2": "/teacher-app/static/media/fa-solid-900.41c0f706d8ce93933771.woff2",
+    "static/media/fa-brands-400.woff2": "/teacher-app/static/media/fa-brands-400.3ac6859b28be946745f9.woff2",
+    "static/media/fa-regular-400.ttf": "/teacher-app/static/media/fa-regular-400.3cd9fb8fcec4ad0f99d4.ttf",
+    "static/media/fa-regular-400.woff2": "/teacher-app/static/media/fa-regular-400.1f3772178d9e5bed38a6.woff2",
+    "static/media/logo.jpg": "/teacher-app/static/media/logo.587f450eb7b96fceb23e.jpg",
+    "static/media/fa-v4compatibility.ttf": "/teacher-app/static/media/fa-v4compatibility.e314b618134d5be20996.ttf",
+    "static/media/fa-v4compatibility.woff2": "/teacher-app/static/media/fa-v4compatibility.4ee7f902d88f819e251c.woff2",
+    "index.html": "/teacher-app/index.html",
+    "main.69da96ca.css.map": "/teacher-app/static/css/main.69da96ca.css.map",
+    "main.28c3f5c1.js.map": "/teacher-app/static/js/main.28c3f5c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69da96ca.css",
+    "static/js/main.28c3f5c1.js"
+  ]
+}
